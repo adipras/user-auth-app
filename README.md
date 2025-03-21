@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js & Fomantic-UI Frontend
 
-## Getting Started
+## 🚀 Overview
+Frontend aplikasi ini dikembangkan menggunakan **Next.js** dan **Fomantic-UI** sebagai framework UI. Aplikasi ini terintegrasi dengan backend .NET Core untuk fitur autentikasi dan manajemen pengguna.
 
-First, run the development server:
+## 🛠️ Fitur
+- **Autentikasi dengan JWT** (Login & Logout)
+- **Menampilkan data pengguna dari backend**
+- **Navbar dengan informasi pengguna yang login**
+- **Proteksi halaman dashboard** (hanya bisa diakses jika login)
+- **Manajemen user claims dari JWT token**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📌 Prasyarat
+Sebelum menjalankan aplikasi ini, pastikan Anda sudah menginstal:
+- **Node.js** (disarankan versi terbaru)
+- **npm** atau **yarn**
+- **Backend .NET Core** sudah berjalan di `http://localhost:5150`
+
+## 🔧 Cara Menjalankan
+1. **Clone Repository**
+   ```sh
+   git clone https://github.com/adipras/user-auth-app.git
+   cd user-auth-app
+   ```
+
+2. **Instal Dependensi**
+   ```sh
+   npm install
+   ```
+
+3. **Konfigurasi Variabel Lingkungan**
+   Buat file `.env.local` dan isi dengan:
+   ```sh
+   NEXT_PUBLIC_API_URL=http://localhost:5150/api
+   ```
+
+4. **Jalankan Aplikasi**
+   ```sh
+   npm run dev
+   ```
+   Aplikasi akan berjalan di: `http://localhost:3000`
+
+## 🔑 Akun Testing
+Gunakan akun yang telah didaftarkan melalui halaman **Register** atau seed data dari backend.
+
+## 📂 Struktur Folder
+```
+repo-frontend/
+├── src/
+│   ├── app/
+│   │   ├── login/
+│   │   │   ├── page.tsx
+│   │   ├── dashboard/
+│   │   │   ├── page.tsx
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── ProtectedRoute.tsx
+│   ├── types/
+│   │   ├── User.ts
+├── .env.local
+├── package.json
+├── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Teknologi yang Digunakan
+- **Next.js** (React Framework)
+- **Fomantic-UI** (UI Framework)
+- **Axios** (HTTP Client)
+- **JWT Decode** (Parsing JWT Token)
+- **Cookies.js** (Manajemen Token)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📌 Catatan Penting
+- Pastikan **backend sudah berjalan** sebelum menjalankan frontend.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
